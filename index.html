@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Product Card</title>
+        <link rel="stylesheet" href="style.css" />
+
+        <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet"/>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&family=Roboto:wght@400;500;900&display=swap" rel="stylesheet" />
+    </head>
+  
+    <body>
+        <div class="card">
+            <script>
+                function saveProduct() {
+                    document.getElementById("btn-like").style.color='rgb(184, 43, 43)';
+                }
+                function addCart() {
+                    document.getElementById("btn-addcart").style.color='#c9d42c';
+                }
+            </script>
+
+            <button class="card__like" onclick="saveProduct()" id="btn-like">
+                <i class="bx bx-heart"></i>
+            </button>
+
+            <button class="card__cart" onclick="addCart()" id="btn-addcart">
+                <i class="bx bx-cart-alt"></i>
+            </button>
+            
+
+            <div class="card__img">
+                <img src="./Nike Zoom KD 12.png" alt="Nike shoes" />
+            </div>
+
+            <div class="card__detail">
+                <div class="card__name">Nike Zoom KD 12</div>
+
+                <div class="card__price"> $99 </div>
+    
+                <div class="card__size">
+                    <p>Size:</p>
+                    <input class="sizebox" name="size" type="radio" id="size6">
+                    <label for="size6">6</label>
+                    
+                    <input class="sizebox" name="size" type="radio" id="size7">
+                    <label for="size7">7</label>
+
+                    <input class="sizebox" name="size" type="radio" id="size8">
+                    <label for="size8">8</label>
+
+                    <input class="sizebox" name="size" type="radio" id="size9">
+                    <label for="size9">9</label>
+                </div>
+    
+                <div class="card__color">
+                    <p>Color: </p>
+                    <input id="green-check" name="color" type="radio">
+                    <input id="red-check" name="color" type="radio">
+                    <input id="black-check" name="color" type="radio">
+                    
+                </div>
+                
+                <div class="card__action">
+                    <button class="btn-add">Add Cart</button>
+                    <button class="btn-buy">Buy Now</button>
+                </div>
+            </div>
+            
+
+        </div>
+    </body>
+</html>

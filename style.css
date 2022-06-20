@@ -1,0 +1,252 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: linear-gradient(to right, #4daf54, #3d8880);
+    --primary-color: #4daf54;
+    --card-color: #272d40;
+}
+
+body {
+    height: 100vh;
+    background: var(--bg-color);
+    /* font-family: 'Roboto', sans-serif, system-ui; */
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+}
+
+.card {
+    margin: auto;
+
+    padding: 20px;
+    width: 320px;
+    height: 450px;
+    background-color: var(--card-color);
+    border-radius: 15px;
+}
+
+.card__like, .card__cart {
+    color: white;
+    background-color: transparent;
+    border: none;
+    font-size: 25px; /* làm icon to */
+    cursor: pointer;
+    position: relative;
+    z-index: 100;
+}
+.card__like:hover {
+    color: rgb(184, 43, 43);
+}
+.card__cart:hover {
+    color: #c9d42c;
+}
+.card__cart {
+    float: right;
+    position: relative;
+}
+
+.card__img img {
+    width: 90%;
+    /* height: 90%;
+    object-fit: cover; */
+    /* object-position: -5px; */
+}
+
+.card__name, .card__price{
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.5; /* giãn dòng */
+}
+.card__name {
+    font-size: 24px;
+    color: var(--primary-color);
+}
+.card__price{
+    font-size: 26px;
+    color: white;
+}
+
+.card__size, .card__color {
+    color: white;
+    font-size: 18px;
+    line-height: 2.8;
+}
+
+.card__size .sizebox {
+    color: black;
+    background-color: #dadada;
+    border-radius: 5px;
+    border: 1px solid gray;
+    margin: 0 2px;
+    padding: 8px 10px;
+    font-size: 16px;
+
+    cursor: pointer;
+}
+.sizebox:hover {
+    background-color: #95cf99;
+    border: 1px solid rgb(40, 199, 19);
+}
+.card__size input[type='radio']{
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    appearance: none;
+    background: white;
+    outline: none;
+    border: 0.5px solid white;
+    padding: 16px 12px;
+}
+.card__size input[type='radio']:checked {
+    background-color: #95cf99;
+    border: 1px solid rgb(40, 199, 19);
+    box-sizing: border-box;
+    
+}
+.card__size label {
+    position: relative;
+    left: -20px;
+    color: black;
+    font-size: 15px;
+}
+
+
+/* color */
+.card__color, .card__size {
+    display: inline-flex;
+    align-items: center;
+}
+.card__color p, .card__size p {
+    margin: auto;
+    margin-right: 20px;
+}
+.card__color input, .card__size input {
+    margin: 12px 8px 0;
+    cursor: pointer;
+}
+
+.card__color input[type='radio'] {
+    box-sizing: border-box;
+    position: relative;
+    top: -2px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    outline: none;
+    visibility: hidden;
+}
+
+.card__color input[type='radio']::after {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: relative;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+}
+
+.card__color input[type='radio']:checked::after {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    top: -2px;
+    position: relative;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 1px solid white;
+}
+
+input[type=radio]#green-check::after {
+    background-color: green;
+}
+input[type=radio]#red-check::after {
+    background-color: red;
+}
+input[type=radio]#black-check::after {
+    background-color: black;
+}
+
+/* button */
+.card__action {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card__action button {
+    box-sizing: border-box;
+    margin: auto;
+    outline: none;
+    border-radius: 5px;
+    padding: 10px 32px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s;
+}
+.card__action button:hover {
+    transform: scale(0.95);
+}
+
+.card__action .btn-add {
+    margin-right: 10px;
+
+    border:  0.35px solid #18e940;
+    color:  #18e940;
+    background-color: #49854d75;
+}
+.card__action .btn-add:hover {
+    background-color: #43d34e75;
+
+}
+
+.card__action .btn-buy {
+    background-color: #28a745;
+    color: white;
+    border: none;
+}
+.card__action .btn-buy:hover{
+    background-color: #058f48;
+}
+
+/* animation--------------------------- */
+.card:hover .card__img {
+    transform: translate(-10px,-90px) rotate(-30deg);
+}
+.card:hover .card__name {
+    transform: translate(-40px,-45px);
+}
+.card:hover .card__price {
+    transform: translate(-115px,-45px);
+}
+.card__img, .card__name, .card__price {
+    transition: 0.4s;
+}
+
+.card__size {
+    margin-top: 160px;
+}
+.card__size, .card__color, .card__action {
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+    transition-delay: 0.4s;
+
+}
+.card:hover .card__size, 
+.card:hover .card__color, 
+.card:hover .card__action {
+    visibility: visible;
+    opacity: 100;
+    transform: translate(0,-160px);
+}
+.card__detail {
+    position: relative;
+    top: -20px;
+}
